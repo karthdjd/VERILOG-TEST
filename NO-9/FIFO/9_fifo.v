@@ -1,5 +1,5 @@
 module fifo_11 (
-  input clk, rst_n,
+  input clk, rst,
   input w_en, r_en,
   input [31:0] data_in,
   output reg [31:0] data_out,
@@ -11,7 +11,7 @@ module fifo_11 (
   
   
   always@(posedge clk) begin
-    if(!rst_n) begin
+    if(!rst) begin
       w_ptr <= 0; r_ptr <= 0;
       data_out <= 0;
     end
