@@ -2,10 +2,7 @@ module dff_beh (input d,
               input clock,  
 	      
               output reg q);  
-  
-  always @ (posedge clock)  
-	if(!clock)  
-          q <= 0;  
-       else  
+  initial q<=0;
+  always @ (posedge clock) 
           q <= d;  
 endmodule  
