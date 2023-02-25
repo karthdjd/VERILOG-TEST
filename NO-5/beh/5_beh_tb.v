@@ -1,25 +1,15 @@
-module dff_tb;  
+module dff_beh_tb;  
     reg clock;  
     reg d;  
-      
-    
-  output q;
- 
-  
-    dff_beh  dut( .d(d),   
+   output q;
+ dff_beh  dut( .d(d),   
                 .clock (clock),  
                 .q (q));  
-  
-   
-    always #10 clock = clock;  
- 
-   
-    initial begin  
+  always #10 clock = clock;  
+ initial begin  
         clock = 1;  
         d = 1;  
-         
-  
-        #15 d = 0;  
+       #15 d = 0;  
        #30 d=1;
        #45 d=0;
         #100 $finish;
